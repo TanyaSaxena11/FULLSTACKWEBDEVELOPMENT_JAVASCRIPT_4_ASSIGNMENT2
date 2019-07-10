@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset ="UTF-8">
+        <meta name ="viewport" content="width=device-width,initial-scale=1.0">
+        <title>Assignment2_Constructor Function</title>
+    </head>
+    <body>
+        <script>
+            function Airplane(model, seatingCapacity, maximumSpeed){
+                
+                this.model = model;
+                this.seatingCapacity = seatingCapacity;
+                this.maximumSpeed = maximumSpeed;
+                this.print = function (){
+                    return('The plane is of model ' + this.model + ' and has a seating capacity of ' + this.seatingCapacity
+                    + '. '+ 'Its maximum speed is ' + this.maximumSpeed);
+                }
+            }
+            //Creating 3 new airplane object and calling their print method
+            console.log('************Creating 3 new airplane object and calling their print method****************');
+            var planeObj1 = new Airplane('SpiceJet',500,'200 Km/hr');
+            var planeObj2 = new Airplane('Boeing',70, '500 Km/hr');
+            var planeObj3 = new Airplane('Qatar Airways',350, '250 Km/hr');
+            console.log(planeObj1.print());
+            console.log(planeObj2.print());
+            console.log(planeObj3.print());
+            
+            //Increasing seating capacity for all airplane objects by 10
+            console.log('************Increasing seating capacity for all airplane objects by 10****************');
+            planeObj1.seatingCapacity += 10;
+            planeObj2.seatingCapacity += 10;
+            planeObj3.seatingCapacity += 10;
+            console.log(planeObj1.print());
+            console.log(planeObj2.print());
+            console.log(planeObj3.print());
+            
+            //Deleting maximum speed for all objects
+            console.log('*************Deleting maximum speed property for all objects***************');
+            delete planeObj1.maximumSpeed;
+            delete planeObj2.maximumSpeed;
+            delete planeObj3.maximumSpeed;
+            console.log(planeObj1.print());
+            console.log(planeObj2.print());
+            console.log(planeObj3.print());
+            
+            //Adding new property average speed for all objects with value 600
+            console.log('*************Adding new property average speed for all objects***************');
+            planeObj1.avgSpeed = 600;
+            planeObj2.avgSpeed = 600;
+            planeObj3.avgSpeed = 600;
+            console.log(planeObj1);
+            console.log(planeObj2);
+            console.log(planeObj3);
+
+        </script>
+    </body>
